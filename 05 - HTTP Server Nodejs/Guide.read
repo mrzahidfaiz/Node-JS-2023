@@ -1,0 +1,11 @@
+npm init for setup server
+Create File index.js
+use build-in module http 
+than create server with myServer then pass a request listener as parameter which is a anpnymous/arrow function
+and this arrow function also have 2 parameters which is request and response.
+1st - request (req) keeped client side data i.e ip address client id name etc
+2nd - response (res) give response
+now config port for webserver which listen on port 8000
+()=>{console.log('server Started')} for checking success or not
+now write Script Start package.json
+now start server using npm start

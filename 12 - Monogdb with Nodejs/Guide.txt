@@ -1,0 +1,9 @@
+mongosh 
+
+show dbs
+
+use <db_name>
+show collections
+db.<collection_name>.insertOne({})
+db.<collection_name>.find()
+db.<collection_name>.insert()
