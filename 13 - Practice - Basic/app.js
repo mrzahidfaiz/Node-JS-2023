@@ -11,7 +11,10 @@ const myServer = http.createServer((req, res) => {
   } else if (req.url === "/form"){
     res.setHeader("Content-Type", "text/html");
     // by default its send Get request so we use method in form tag; by default button action as sumbit
-    res.write("<form action='/submit' method='POST'><input name='Data'/><button>Submit</button></form>");
+    res.write("<form action='/submit' method='POST'><input name='Data' /><button>Submit</button></form>");
+    res.end();
+  } else if (req.url === "/submit" ) {
+    res.write("Data Submited Success");
     res.end();
   } else {
     res.write("404 - Not Found");
