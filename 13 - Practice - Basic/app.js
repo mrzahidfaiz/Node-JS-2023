@@ -1,6 +1,10 @@
 // console.log("Hello World!");
 
 const http = require("http");
+const fs = require("fs"); // next u define the path of file to save
+const path = require("path");
+
+const dataPath = path.join(process.cwd(), "db.txt");
 
 const PORT = 3000;
 
@@ -22,9 +26,10 @@ const myServer = http.createServer((req, res) => {
     let data = "";
     req.on("data", (chunk) => (data += chunk)); // aftr recieving complete data next is
     req.on("end", () => {
-      console.log(data); // its show Result in console
-      res.write("Data Submited Success");
-      res.end();
+      fs.writeFile(dataPath, data, () => {
+        res.write("Data Submited Success");
+        res.end();
+      });
     });
   } else {
     res.write("404 - Not Found");
