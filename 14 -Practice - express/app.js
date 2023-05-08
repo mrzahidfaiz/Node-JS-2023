@@ -2,7 +2,12 @@ const express = require("express");
 
 const app = express();
 
-app.get("/", (req, res) => {
+// this function can 3 arug which is res, req and next();
+app.use((req, res, next) => {
+    next();
+})
+
+app.use((req, res, next) => {
     res.send(req.url);
 })
 
